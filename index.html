@@ -1,7 +1,144 @@
-<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-  intent="WELCOME"
-  chat-title="RideX_Motors"
-  agent-id="ab8e373c-8bdb-4dd9-b8d1-4b8e5c50da1b"
-  language-code="en"
-></df-messenger>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RideX Motors - AI Assistant</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: #111827;
+            color: white;
+            padding: 18px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #d1d5db;
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .main h2 {
+            font-size: 32px;
+            color: #111827;
+            margin-bottom: 15px;
+        }
+
+        .main p {
+            color: #6b7280;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Dialogflow Messenger */
+        df-messenger {
+            --df-messenger-bot-message: #f1f5f9;
+            --df-messenger-button-titlebar-color: #111827;
+            --df-messenger-chat-background-color: #ffffff;
+            --df-messenger-font-color: #111827;
+            --df-messenger-send-icon: #111827;
+            --df-messenger-user-message: #111827;
+
+            z-index: 9999;
+        }
+
+        /* Desktop chatbot size */
+        @media (min-width: 769px) {
+            df-messenger {
+                --df-messenger-chat-window-width: 380px;
+                --df-messenger-chat-window-height: 600px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            .header {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .header p {
+                font-size: 12px;
+            }
+
+            .main {
+                padding: 30px 15px;
+            }
+
+            .main h2 {
+                font-size: 25px;
+            }
+
+            .main p {
+                font-size: 14px;
+            }
+
+            df-messenger {
+                --df-messenger-chat-window-width: 100vw;
+                --df-messenger-chat-window-height: calc(100vh - 70px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>RideX Motors</h1>
+        <p>Your AI Vehicle Assistant</p>
+    </div>
+
+    <div class="main">
+        <h2>Welcome to RideX Motors</h2>
+
+        <p>
+            Find your ideal vehicle, check vehicle details,
+            explore available cars and get assistance from
+            our AI chatbot.
+        </p>
+    </div>
+
+
+    <!-- Dialogflow Messenger -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <df-messenger
+        intent="WELCOME"
+        chat-title="RideX_Motors"
+        agent-id="ab8e373c-8bdb-4dd9-b8d1-4b8e5c50da1b"
+        language-code="en">
+    </df-messenger>
+
+</body>
+</html>
