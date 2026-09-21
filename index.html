@@ -19,7 +19,6 @@
             min-height: 100vh;
         }
 
-        /* Header */
         .header {
             background: #111827;
             color: white;
@@ -37,10 +36,9 @@
             color: #d1d5db;
         }
 
-        /* Main Content */
         .main {
             max-width: 900px;
-            margin: 0 auto;
+            margin: auto;
             padding: 40px 20px;
             text-align: center;
         }
@@ -52,32 +50,66 @@
         }
 
         .main p {
-            color: #6b7280;
+            color: #4b5563;
             font-size: 16px;
             line-height: 1.6;
         }
 
-        /* Dialogflow Messenger */
+        /* ============================= */
+        /* DIALOGFLOW MESSENGER THEME */
+        /* ============================= */
+
         df-messenger {
-            --df-messenger-bot-message: #f1f5f9;
-            --df-messenger-button-titlebar-color: #111827;
+
+            /* Chat window */
             --df-messenger-chat-background-color: #ffffff;
+
+            /* Header */
+            --df-messenger-button-titlebar-color: #111827;
+            --df-messenger-button-titlebar-font-color: #ffffff;
+
+            /* General text */
             --df-messenger-font-color: #111827;
-            --df-messenger-send-icon: #111827;
-            --df-messenger-user-message: #111827;
+
+            /* Bot message */
+            --df-messenger-bot-message: #f1f5f9;
+
+            /* Customer message */
+            --df-messenger-user-message: #2563eb;
+
+            /* Send button */
+            --df-messenger-send-icon: #2563eb;
+
+            /* Input area */
+            --df-messenger-input-box-color: #ffffff;
+
+            /* Input text */
+            --df-messenger-input-font-color: #111827;
+
+            /* Input placeholder */
+            --df-messenger-input-placeholder-font-color: #6b7280;
 
             z-index: 9999;
         }
 
-        /* Desktop chatbot size */
+
+        /* ============================= */
+        /* DESKTOP */
+        /* ============================= */
+
         @media (min-width: 769px) {
+
             df-messenger {
-                --df-messenger-chat-window-width: 380px;
+                --df-messenger-chat-window-width: 400px;
                 --df-messenger-chat-window-height: 600px;
             }
         }
 
-        /* Mobile */
+
+        /* ============================= */
+        /* MOBILE */
+        /* ============================= */
+
         @media (max-width: 768px) {
 
             .header {
@@ -105,32 +137,62 @@
             }
 
             df-messenger {
+
                 --df-messenger-chat-window-width: 100vw;
-                --df-messenger-chat-window-height: calc(100vh - 70px);
+
+                --df-messenger-chat-window-height: calc(100vh - 65px);
+
+                --df-messenger-button-titlebar-color: #111827;
+
+                --df-messenger-chat-background-color: #ffffff;
+
+                --df-messenger-font-color: #111827;
+
+                --df-messenger-bot-message: #f1f5f9;
+
+                --df-messenger-user-message: #2563eb;
+
+                --df-messenger-send-icon: #2563eb;
             }
         }
     </style>
+
 </head>
 
 <body>
 
+    <!-- HEADER -->
+
     <div class="header">
+
         <h1>RideX Motors</h1>
-        <p>Your AI Vehicle Assistant</p>
+
+        <p>
+            Your AI Vehicle Assistant
+        </p>
+
     </div>
 
+
+    <!-- MAIN -->
+
     <div class="main">
-        <h2>Welcome to RideX Motors</h2>
+
+        <h2>
+            Welcome to RideX Motors
+        </h2>
 
         <p>
             Find your ideal vehicle, check vehicle details,
             explore available cars and get assistance from
             our AI chatbot.
         </p>
+
     </div>
 
 
-    <!-- Dialogflow Messenger -->
+    <!-- DIALOGFLOW MESSENGER -->
+
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 
     <df-messenger
